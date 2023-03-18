@@ -1,0 +1,52 @@
+<div fxLayout="row" style="margin: 15px">
+	<div class="alert is-helpful">
+		<p>
+			This example is a copy of the
+			<a
+				href="https://angular.io/guide/forms#building-a-template-driven-form"
+				target="_blank"
+				title="Building a template-driven form"
+				>Building a template-driven form</a
+			>
+			(Template-driven form <a href="https://angular.io/generated/live-examples/forms/stackblitz.html">Live Example</a>).
+		</p>
+		<p>Below is rebuilt using Reactive Entity.</p>
+	</div>
+	<h2>My Heroes</h2>
+	<div fxFlex="40%" fxFlex.md="60%" fxFlex.sm="50%" fxFlex.xs="100%" class="hero-list">
+		<mat-card *ngIf="allSubmitted" class="hero-card">
+			<mat-card-title>All Heroes</mat-card-title>
+			<pre><p>{{ getAllData() | json }}</p></pre>
+		</mat-card>
+
+		<div *ngIf="!allSubmitted">
+			<mat-card *ngFor="let hero of heroes" class="hero-card">
+				<div *ngIf="!hero.isSubmitted">
+					<div [entity]="hero" class="example-container">
+						<entity-input attribute="id"></entity-input>
+						<entity-input attribute="name"></entity-input>
+						<entity-input attribute="power"></entity-input>
+						<entity-select attribute="alterEgo" [options]="powers"></entity-select>
+					</div>
+					<div class="button-container">
+						<button mat-flat-button class="mat-primary" (click)="submit(hero)" [disabled]="!hero.toBeSaved || !hero.isValid">
+							Submit
+						</button>
+					</div>
+				</div>
+				<div *ngIf="hero.isSubmitted">
+					<pre><p>{{ getData(hero) | json }}</p></pre>
+					<button mat-flat-button class="mat-primary" (click)="hero.isSubmitted = false">Edit</button>
+				</div>
+			</mat-card>
+		</div>
+
+		<div class="button-container">
+			<button mat-flat-button class="mat-primary" (click)="addHero()" *ngIf="!allSubmitted">Add Hero</button>
+			<button mat-flat-button class="mat-primary" (click)="submitAll()" *ngIf="!allSubmitted" [disabled]="!heroes.isValid">
+				Submit All
+			</button>
+			<button mat-flat-button class="mat-primary" (click)="allSubmitted = false" *ngIf="allSubmitted">Edit</button>
+		</div>
+	</div>
+</div>

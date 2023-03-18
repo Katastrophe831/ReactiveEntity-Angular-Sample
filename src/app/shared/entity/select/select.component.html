@@ -1,0 +1,10 @@
+<mat-form-field *ngIf="entity" [class.mat-form-field-invalid]="hasFieldMessage()" [class.isHidden]="isFieldHidden()">
+	<mat-label>{{ entity.entityTranslations[attribute] }}</mat-label>
+	<mat-select [(ngModel)]="value" [required]="isFieldRequired()" [disabled]="isFieldReadonly()">
+		<mat-option *ngFor="let value of options" [value]="value">{{ value }}</mat-option>
+	</mat-select>
+
+	<mat-hint *ngIf="hasFieldMessage()" class="hint-error">
+		{{ getFieldMessage() }}
+	</mat-hint>
+</mat-form-field>

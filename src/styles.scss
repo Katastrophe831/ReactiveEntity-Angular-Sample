@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+	height: 100%;
+}
+body {
+	margin: 0;
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.alert {
+	padding: 16px;
+	margin: 24px 0;
+	width: 100%;
+	box-sizing: border-box;
+	clear: both;
+
+	&.is-helpful {
+		border-left: 8px solid #1976d2;
+		background-color: #1976d20d;
+	}
+}
+
+.button-container button + * {
+	margin-left: 8px;
+}
+
+.example-container [class^='entity-input'] + * {
+	margin-left: 8px;
+}
+
+.example-right-align {
+	text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+	display: none;
+}
+
+input.example-right-align {
+	appearance: textfield;
+}
