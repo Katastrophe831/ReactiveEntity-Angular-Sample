@@ -18,5 +18,16 @@
 		"name": "Hero Name",
 		"power": "Hero Power",
 		"alterEgo": "Alter Ego"
+	},
+	"User": {
+		"FIRSTNAME": "First Name",
+		"LASTNAME": "Last Name",
+		"DISPLAYNAME": "Display Name",
+		"PASSWORD": "Password",
+		"PASSWORD_CHANGEPROFILE": "Changed Password",
+		"NEWPASSWORD": "Password",
+		"NEWPASSWORD_CHANGEPROFILE": "New Password",
+		"CONFIRMPWD": "Confirm Password",
+		"CONFIRMPWD_CHANGEPROFILE": "Confirm New Password"
 	}
 }

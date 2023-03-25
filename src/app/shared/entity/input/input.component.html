@@ -5,7 +5,8 @@
 		[placeholder]="entity.entityTranslations[attribute]"
 		[(ngModel)]="value"
 		[required]="isFieldRequired()"
-		[disabled]="isFieldReadonly()" />
+		[disabled]="isFieldReadonly()"
+		[type]="type" />
 
 	<mat-hint *ngIf="hasFieldMessage()" class="hint-error">
 		{{ getFieldMessage() }}

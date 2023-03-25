@@ -1,0 +1,43 @@
+<div class="container" fxLayout="row" fxLayoutAlign="center none">
+	<div fxFlex="95%">
+		<div class="alert is-helpful">
+			<p>
+				This example is using a single 'User' Reactive Entity as well as a single UI form to handle two different
+				application scenarios.
+			</p>
+		</div>
+
+		<mat-card>
+			<mat-card-content>
+				<h2>My Profile</h2>
+
+				<div fxLayout="row" fxLayout.sm="column" fxLayout.xs="column">
+					<div fxFlex="30%" fxFlex.sm="95%" fxFlex.xs="95%" class="profile-container">
+						<div class="profile-card">
+							<img src="assets/images/user.png" />
+
+							<h2 class="title">Full Name</h2>
+
+							<p>First Name</p>
+
+							<p>email@testuser.com</p>
+						</div>
+					</div>
+
+					<div fxFlex></div>
+
+					<div fxFlex="65%" fxFlex.sm="95%" fxFlex.xs="950%">
+						<mat-tab-group>
+							<mat-tab label="Register">
+								<app-register></app-register>
+							</mat-tab>
+							<mat-tab label="Change Password">
+								<app-changeprofile></app-changeprofile>
+							</mat-tab>
+						</mat-tab-group>
+					</div>
+				</div>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

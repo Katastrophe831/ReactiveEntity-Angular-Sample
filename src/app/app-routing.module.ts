@@ -11,6 +11,10 @@ const routes: Routes = [
 		loadChildren: () => import('./tour/tour.module').then((m) => m.TourModule),
 	},
 	{
+		path: 'userprofile',
+		loadChildren: () => import('./userprofile/userprofile.module').then((m) => m.UserprofileModule),
+	},
+	{
 		path: '**',
 		redirectTo: 'dashboard',
 		pathMatch: 'full',

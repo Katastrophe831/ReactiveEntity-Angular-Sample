@@ -9,6 +9,6 @@ import { EntityModule } from './entity/entity.module';
 @NgModule({
 	declarations: [LayoutComponent],
 	imports: [CommonModule, RouterModule, FlexLayoutModule, MaterialModule, EntityModule],
-	exports: [RouterModule, MaterialModule, LayoutComponent, EntityModule],
+	exports: [RouterModule, MaterialModule, FlexLayoutModule, LayoutComponent, EntityModule],
 })
 export class SharedModule {}

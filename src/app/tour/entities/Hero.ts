@@ -1,26 +1,20 @@
-import { Entity, NonPersistent, Readonly, Required } from 'reactive-entity';
+import { Entity, Field } from 'reactive-entity';
 
 export class Hero extends Entity {
+	@Field()
 	id!: number;
+
+	@Field()
 	name!: string;
+
+	@Field()
 	power!: string;
+
+	@Field()
 	alterEgo!: string;
 
-	@NonPersistent
+	@Field({
+		nonPersistent: true,
+	})
 	isSubmitted: boolean = false;
-}
-
-export class Hero2 extends Hero {
-	override get entityName(): string {
-		return 'Hero';
-	}
-
-	@Required(true)
-	override alterEgo!: string;
-
-	protected override onInit(): void {
-		super.onInit();
-		//this.alterEgo = 'Really Smart';
-		this.alterEgo = '';
-	}
 }
